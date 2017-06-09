@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_9DFC85_cityhomeModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DB_9DFC85_cityhomeEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Tblcats" EntityType="DB_9DFC85_cityhomeModel.Tblcat" />
+    <EntitySet Name="Tblproducts" EntityType="DB_9DFC85_cityhomeModel.Tblproduct" />
+    <EntitySet Name="Tblusers" EntityType="DB_9DFC85_cityhomeModel.Tbluser" />
+  </EntityContainer>
+  <EntityType Name="Tblcat">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Categoryname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tblproduct">
+    <Key>
+      <PropertyRef Name="Productid" />
+    </Key>
+    <Property Name="Productid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Modelname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Categoryid" Type="Int32" />
+    <Property Name="Image" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="FrontDisplay" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="Tbluser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Contact" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Fullname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

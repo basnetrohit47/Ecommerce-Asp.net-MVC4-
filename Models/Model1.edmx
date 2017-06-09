@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_9DFC85_cityhomeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DB_9DFC85_cityhomeModelStoreContainer">
+          <EntitySet Name="Tblcat" EntityType="DB_9DFC85_cityhomeModel.Store.Tblcat" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tblproducts" EntityType="DB_9DFC85_cityhomeModel.Store.Tblproducts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tbluser" EntityType="DB_9DFC85_cityhomeModel.Store.Tbluser" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Tblcat">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Categoryname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tblproducts">
+          <Key>
+            <PropertyRef Name="Productid" />
+          </Key>
+          <Property Name="Productid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Modelname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Categoryid" Type="int" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="FrontDisplay" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Tbluser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_9DFC85_cityhomeModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DB_9DFC85_cityhomeEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Tblcats" EntityType="DB_9DFC85_cityhomeModel.Tblcat" />
+          <EntitySet Name="Tblproducts" EntityType="DB_9DFC85_cityhomeModel.Tblproduct" />
+          <EntitySet Name="Tblusers" EntityType="DB_9DFC85_cityhomeModel.Tbluser" />
+        </EntityContainer>
+        <EntityType Name="Tblcat">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Categoryname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tblproduct">
+          <Key>
+            <PropertyRef Name="Productid" />
+          </Key>
+          <Property Name="Productid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Modelname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Categoryid" Type="Int32" />
+          <Property Name="Image" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FrontDisplay" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="Tbluser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Contact" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Fullname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_9DFC85_cityhomeModelStoreContainer" CdmEntityContainer="DB_9DFC85_cityhomeEntities">
+          <EntitySetMapping Name="Tblcats">
+            <EntityTypeMapping TypeName="DB_9DFC85_cityhomeModel.Tblcat">
+              <MappingFragment StoreEntitySet="Tblcat">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Categoryname" ColumnName="Categoryname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tblproducts">
+            <EntityTypeMapping TypeName="DB_9DFC85_cityhomeModel.Tblproduct">
+              <MappingFragment StoreEntitySet="Tblproducts">
+                <ScalarProperty Name="Productid" ColumnName="Productid" />
+                <ScalarProperty Name="Modelname" ColumnName="Modelname" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Categoryid" ColumnName="Categoryid" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FrontDisplay" ColumnName="FrontDisplay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tblusers">
+            <EntityTypeMapping TypeName="DB_9DFC85_cityhomeModel.Tbluser">
+              <MappingFragment StoreEntitySet="Tbluser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

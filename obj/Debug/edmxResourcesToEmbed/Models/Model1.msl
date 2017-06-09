@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_9DFC85_cityhomeModelStoreContainer" CdmEntityContainer="DB_9DFC85_cityhomeEntities">
+    <EntitySetMapping Name="Tblcats">
+      <EntityTypeMapping TypeName="DB_9DFC85_cityhomeModel.Tblcat">
+        <MappingFragment StoreEntitySet="Tblcat">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Categoryname" ColumnName="Categoryname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tblproducts">
+      <EntityTypeMapping TypeName="DB_9DFC85_cityhomeModel.Tblproduct">
+        <MappingFragment StoreEntitySet="Tblproducts">
+          <ScalarProperty Name="Productid" ColumnName="Productid" />
+          <ScalarProperty Name="Modelname" ColumnName="Modelname" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Categoryid" ColumnName="Categoryid" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FrontDisplay" ColumnName="FrontDisplay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tblusers">
+      <EntityTypeMapping TypeName="DB_9DFC85_cityhomeModel.Tbluser">
+        <MappingFragment StoreEntitySet="Tbluser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

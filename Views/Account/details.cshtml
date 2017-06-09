@@ -1,0 +1,90 @@
+﻿@model List<CityHomeNpl.Models.Tblproduct>
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<script src="~/Scripts/jquery-1.11.3.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" />
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js">
+
+    </script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          $('#myTable').DataTable({
+              select: true
+          });
+      });
+        </script>
+
+  
+
+
+    <div class="main-content">
+<div class="col-md-12 back">
+<h2>Details</h2>
+
+<table class="table table-striped table-bordered margin " id="myTable">
+    <thead>
+    <tr>
+        <th>
+           
+        </th>
+        <th>
+            ID
+        </th>
+        <th>Item_Name        </th>
+           <th>Price Rate        </th>
+           <th>Item Category        </th>
+        <th>Photo</th>
+        <th>Description</th>
+        <th>FrontDisplay</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+        </thead>
+   @foreach(var item in Model){
+       <tbody>
+    <tr>
+        <td><input type="checkbox" name="multidelete" /></td>
+         <td>
+           @Html.DisplayFor(c=>item.Productid)
+        </td>
+        <td>
+         @Html.DisplayFor(c=>item.Modelname)
+        </td>
+        <td>
+          @Html.DisplayFor(c=>item.Price)
+        </td>
+          <td>
+ @Html.DisplayFor(c=>item.Categoryid)
+           </td>
+     
+        <td>
+           @Html.DisplayFor(c=>item.Image)
+        </td>
+        <td>
+          @Html.DisplayFor(c=>item.Description)
+        </td>   
+        <td>
+         @Html.DisplayFor(c=>item.FrontDisplay)
+        </td>
+        <td>
+                 @Html.ActionLink("edit", "edit", new { id=item.Productid })
+        </td>
+        <td>
+       
+          @Html.ActionLink("delete", "delete", new { id=item.Productid })
+        </td>
+         
+    </tr>
+           </tbody>
+    }
+    </table>
+    </div>
+
+        <!-- You only need this form and the form-basic.css -->
+       
+    </div>
+
